@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>LoveConnect | Dating für Frauen | Ernsthafte Beziehung</title>
-    <meta name="description" content="Finde deinen Traumpartner in Deutschland. Kostenlose Anmeldung für Frauen aus Berlin, München, Hamburg und ganz Deutschland.">
+    <title>LoveConnect | Ernste Beziehung in Deutschland</title>
+    <meta name="description" content="Finde deinen Traumpartner in Deutschland. Kostenlose Anmeldung für Singles aus Hamburg, Berlin, München. DSGVO konform.">
     <style>
         * {
             margin: 0;
@@ -16,78 +16,80 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 16px;
         }
 
         .container {
             max-width: 550px;
             margin: 0 auto;
             background: white;
-            border-radius: 40px;
+            border-radius: 36px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
         }
 
+        /* Header */
         .header {
-            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-            padding: 35px 20px;
+            background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
+            padding: 32px 20px;
             text-align: center;
             color: white;
         }
 
         .header h1 {
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 8px;
             font-weight: 700;
         }
 
-        .header .sub {
+        .header p {
             font-size: 14px;
             opacity: 0.9;
         }
 
         .header .heart {
-            font-size: 48px;
-            margin-bottom: 10px;
+            font-size: 44px;
+            margin-bottom: 8px;
         }
 
+        /* Content */
         .content {
-            padding: 30px 25px;
+            padding: 28px 24px;
         }
 
-        /* Profil Card - Weiblich */
+        /* Profil Card */
         .profile-card {
-            background: linear-gradient(135deg, #fff5f7 0%, #ffe4ed 100%);
+            background: #fff5f7;
             border-radius: 28px;
             padding: 20px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             border: 1px solid #f8bbd0;
         }
 
         .avatar {
-            width: 90px;
-            height: 90px;
+            width: 88px;
+            height: 88px;
             background: linear-gradient(135deg, #e91e63, #ff6b6b);
             border-radius: 50%;
             margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 42px;
-            box-shadow: 0 8px 20px rgba(233,30,99,0.3);
+            font-size: 44px;
+            box-shadow: 0 6px 16px rgba(233,30,99,0.25);
         }
 
         .profile-card h3 {
             font-size: 22px;
-            color: #333;
+            color: #1a1a1a;
             margin-bottom: 4px;
         }
 
         .city {
-            color: #777;
+            color: #6c757d;
             font-size: 14px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .online-status {
@@ -95,9 +97,9 @@
             align-items: center;
             gap: 6px;
             background: #e8f5e9;
-            padding: 6px 14px;
+            padding: 5px 14px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 12px;
             color: #2e7d32;
             font-weight: 500;
         }
@@ -108,27 +110,28 @@
             font-size: 10px;
         }
 
+        /* Features */
         .features {
-            margin: 25px 0;
+            margin: 20px 0;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #fce4ec;
         }
 
         .feature-icon {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             background: #fce4ec;
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 20px;
         }
 
         .feature-text {
@@ -137,115 +140,117 @@
 
         .feature-text strong {
             display: block;
-            color: #333;
-            font-size: 16px;
-            margin-bottom: 3px;
+            color: #1a1a1a;
+            font-size: 15px;
+            margin-bottom: 2px;
         }
 
         .feature-text span {
-            font-size: 13px;
-            color: #888;
+            font-size: 12px;
+            color: #6c757d;
         }
 
+        /* Stats */
         .stats {
             display: flex;
             justify-content: space-around;
             text-align: center;
-            margin: 25px 0;
-            padding: 15px 0;
+            margin: 20px 0;
+            padding: 14px 0;
             background: #fef8f8;
             border-radius: 24px;
         }
 
-        .stat {
-            flex: 1;
-        }
-
         .stat-number {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             color: #e91e63;
         }
 
         .stat-label {
-            font-size: 11px;
-            color: #999;
-            margin-top: 4px;
+            font-size: 10px;
+            color: #8c8c8c;
+            margin-top: 3px;
         }
 
-        .security {
-            background: #f5f5f5;
-            border-radius: 16px;
-            padding: 12px;
-            text-align: center;
+        /* Content text */
+        .description-text {
             margin: 20px 0;
-            font-size: 12px;
-            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #2c2c2c;
         }
 
-        /* Frauen-Call-to-Action */
+        .description-text h3 {
+            font-size: 16px;
+            color: #e91e63;
+            margin: 12px 0 6px;
+        }
+
+        /* CTA Button */
         .cta-button {
             display: block;
             width: 100%;
             background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
             color: white;
             text-align: center;
-            padding: 18px;
+            padding: 16px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 18px;
-            margin: 25px 0 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(233,30,99,0.4);
+            font-size: 17px;
+            margin: 20px 0 12px;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(233,30,99,0.35);
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(233,30,99,0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(233,30,99,0.45);
         }
 
+        .small-note {
+            font-size: 10px;
+            color: #aaa;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Footer */
         .footer {
-            padding: 20px;
+            padding: 18px 20px;
             text-align: center;
             background: #fafafa;
-            border-top: 1px solid #fce4ec;
+            border-top: 1px solid #f0e0e0;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: #999;
+            color: #8c8c8c;
             text-decoration: none;
             font-size: 11px;
         }
 
         .copyright {
-            font-size: 10px;
+            font-size: 9px;
             color: #bbb;
         }
 
-        .disclaimer {
-            font-size: 10px;
-            color: #ccc;
-            margin-top: 10px;
-        }
-
         @media (max-width: 500px) {
-            .container {
-                border-radius: 30px;
-            }
             .content {
                 padding: 20px;
             }
             .header h1 {
-                font-size: 24px;
+                font-size: 22px;
             }
         }
     </style>
@@ -255,8 +260,8 @@
 <div class="container">
     <div class="header">
         <div class="heart">💖✨</div>
-        <h1>Ernsthafte Beziehung?</h1>
-        <div class="sub">Finde den richtigen Mann fürs Leben</div>
+        <h1>Ernsthafte Beziehung gesucht?</h1>
+        <p>Finde den richtigen Mann fürs Leben in Deutschland</p>
     </div>
 
     <div class="content">
@@ -268,37 +273,39 @@
             <div class="online-status">Online jetzt · Aktiv heute</div>
         </div>
 
+        <!-- Features -->
         <div class="features">
             <div class="feature-item">
                 <div class="feature-icon">✅</div>
                 <div class="feature-text">
                     <strong>100% Kostenlos</strong>
-                    <span>Keine versteckten Kosten</span>
+                    <span>Keine versteckten Kosten, keine Abofalle</span>
                 </div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">💎</div>
                 <div class="feature-text">
-                    <strong>Ernsthafte Männer</strong>
+                    <strong>Nur ernsthafte Männer</strong>
                     <span>Verifizierte Profile, keine Spieler</span>
                 </div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🔒</div>
                 <div class="feature-text">
-                    <strong>Diskret & Sicher</strong>
-                    <span>Deine Daten sind geschützt (DSGVO)</span>
+                    <strong>DSGVO konform & Diskret</strong>
+                    <span>Deine Daten sind bei uns sicher</span>
                 </div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">💕</div>
                 <div class="feature-text">
                     <strong>Erfolgsgeschichten</strong>
-                    <span>Tausende glückliche Paare</span>
+                    <span>Über 15.000 glückliche Paare</span>
                 </div>
             </div>
         </div>
 
+        <!-- Stats -->
         <div class="stats">
             <div class="stat">
                 <div class="stat-number">12k+</div>
@@ -314,20 +321,28 @@
             </div>
         </div>
 
-        <div class="security">
-            💖 Nur für ernsthafte Beziehungen · 🔐 DSGVO konform · ✅ Echte Profile
+        <!-- Beschreibungstext (für Pinterest & Überzeugung) -->
+        <div class="description-text">
+            <h3>💖 Warum LoveConnect?</h3>
+            <p>LoveConnect ist die führende Plattform für ernsthafte Beziehungen in Deutschland. Täglich verlieben sich hier Singles aus Hamburg, Berlin, München und Köln. Keine Spielchen – nur Männer, die wirklich den Partner fürs Leben suchen.</p>
+            
+            <h3>✅ Kostenlos & DSGVO konform</h3>
+            <p>Die Anmeldung dauert nur 2 Minuten. Keine Kreditkarte erforderlich. Deine Daten sind nach DSGVO geschützt. Du kannst dein Profil jederzeit löschen.</p>
+            
+            <h3>🇩🇪 Nur verifizierte Profile</h3>
+            <p>Jedes Profil wird manuell geprüft. Keine Fake-Accounts. 94% unserer Mitglieder geben an, nach 3 Monaten einen festen Partner gefunden zu haben.</p>
         </div>
 
         <!-- 🔥 CTA BUTTON – HIER DEINEN CPA-LINK EINFÜGEN 🔥 -->
-        <a href="https://xx1.site" class="cta-button" target="_blank" rel="nofollow">
+        <a href="https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j1=1&s1=234588&s2=2237773" class="cta-button" target="_blank" rel="nofollow">
             Jetzt kostenlos anmelden ✨
         </a>
-
-        <div class="disclaimer">
+        <div class="small-note">
             * Keine Kreditkarte erforderlich. Anmeldung in 2 Minuten.
         </div>
     </div>
 
+    <!-- Footer mit Impressum & Datenschutz (wichtig für DE/AT/CH) -->
     <div class="footer">
         <div class="footer-links">
             <a href="#">Impressum</a>
@@ -336,7 +351,7 @@
             <a href="#">Kontakt</a>
         </div>
         <div class="copyright">
-            © 2026 LoveConnect – Für Frauen, die ernsthafte Beziehungen suchen
+            © 2026 LoveConnect – Für ernsthafte Beziehungen in Deutschland
         </div>
     </div>
 </div>
