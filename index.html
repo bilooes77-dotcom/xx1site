@@ -6,16 +6,32 @@
     <title>Redirecting...</title>
     <script>
         // حط الروابط ديالك (smartlinks) هنايا
-        const links = [
+        [
             "https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j5=1&j6=1&s1=234588&s2=2237773", // عوض هادا بالرابط الأول ديالك
             "https://aoallx.gayaliiance.net/?utm_source=f82757e39b1a28a9&ban=tiktok&j5=1&j6=1&s1=234588&s2=2261181"  // عوض هادا بالرابط الثاني ديالك
         ];
 
-        // هاد الكود كيختار واحد من الروابط بشكل عشوائي (50% لكل رابط)
-        const randomIndex = Math.floor(Math.random() * links.length);
+        // كنجبدو الرقم ديال الرابط لي خصنا نمشيو ليه من المتصفح (localStorage)
+        let currentIndex = localStorage.getItem('lastLinkIndex');
+        
+        // يلا كان هادا أول مرة كيدخل، ولا الرقم ماكاينش، كنبداو بالرابط الأول (رقم 0)
+        if (currentIndex === null || isNaN(currentIndex) || currentIndex >= links.length) {
+            currentIndex = 0;
+        } else {
+            currentIndex = parseInt(currentIndex);
+        }
 
-        // توجيه الزائر للرابط لي تختار
-        window.location.replace(links[randomIndex]);
+        // كنوجدو الرقم ديال الرابط لي غيمشي ليه المرة الجاية
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= links.length) {
+            nextIndex = 0; // نرجعو للرابط الأول يلا سالاو الروابط
+        }
+        
+        // كنخبيو الرقم الجاي فالمتصفح
+        localStorage.setItem('lastLinkIndex', nextIndex);
+
+        // توجيه الزائر للرابط الحالي
+        window.location.replace(links[currentIndex]);
     </script>
 </head>
 <body>
