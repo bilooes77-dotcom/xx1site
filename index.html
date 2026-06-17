@@ -12,23 +12,26 @@
         ];
 
         try {
-            var currentIndex = localStorage.getItem('lastLinkIndex');
-            
-            if (currentIndex === null || isNaN(currentIndex) || currentIndex >= links.length) {
-                currentIndex = 0;
-            } else {
-                currentIndex = parseInt(currentIndex);
-            }
+            // كنجبدو أخر رابط شافو هاد الزائر
+            var lastIndex = localStorage.getItem('lastLinkIndex');
+            var currentIndex;
 
-            var nextIndex = currentIndex + 1;
-            if (nextIndex >= links.length) {
-                nextIndex = 0;
+            if (lastIndex === null || isNaN(lastIndex)) {
+                // يلا كانت هادي أول مرة كيدخل الزائر، نعطيوه رابط عشوائي (باش الترافيك يتقسم 50/50 للناس الجداد)
+                currentIndex = Math.floor(Math.random() * links.length);
+            } else {
+                // يلا كان ديجا دخل (بحال يلا درتي نتا Refresh)، نعطيوه الرابط لاخر باش ديما يتبدل
+                currentIndex = parseInt(lastIndex) + 1;
+                if (currentIndex >= links.length) {
+                    currentIndex = 0;
+                }
             }
             
-            localStorage.setItem('lastLinkIndex', nextIndex);
+            // كنخبيو الرابط لي عطيناه باش المرة الجاية (فالـ Refresh) يتبدل
+            localStorage.setItem('lastLinkIndex', currentIndex);
             window.location.replace(links[currentIndex]);
         } catch (error) {
-            // يلا كان شي مشكل (مثلا كتجرب الملف ديريكت من البيسي ديالك)، غيستعمل العشوائي باش مايحبسش
+            // يلا المتصفح حابس localStorage، ديما نستعملو العشوائي 50/50
             var randomIndex = Math.floor(Math.random() * links.length);
             window.location.replace(links[randomIndex]);
         }
