@@ -5,36 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // حط الروابط ديالك (smartlinks) هنايا
-        [
-            "https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j5=1&j6=1&s1=234588&s2=2237773", // عوض هادا بالرابط الأول ديالك
-            "https://aoallx.gayaliiance.net/?utm_source=f82757e39b1a28a9&ban=tiktok&j5=1&j6=1&s1=234588&s2=2261181"  // عوض هادا بالرابط الثاني ديالك
+        // حط الروابط ديالك (smartlinks) هنايا (مهم بزاف تخلي علامات التنصيص "" لي فجناب الرابط)
+        var links = [
+            "https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j5=1&j6=1&s1=234588&s2=2237773", // الرابط الأول
+            "https://aoallx.gayaliiance.net/?utm_source=f82757e39b1a28a9&ban=tiktok&j5=1&j6=1&s1=234588&s2=2261181"  // الرابط الثاني
         ];
 
-        // كنجبدو الرقم ديال الرابط لي خصنا نمشيو ليه من المتصفح (localStorage)
-        let currentIndex = localStorage.getItem('lastLinkIndex');
-        
-        // يلا كان هادا أول مرة كيدخل، ولا الرقم ماكاينش، كنبداو بالرابط الأول (رقم 0)
-        if (currentIndex === null || isNaN(currentIndex) || currentIndex >= links.length) {
-            currentIndex = 0;
-        } else {
-            currentIndex = parseInt(currentIndex);
-        }
+        try {
+            var currentIndex = localStorage.getItem('lastLinkIndex');
+            
+            if (currentIndex === null || isNaN(currentIndex) || currentIndex >= links.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = parseInt(currentIndex);
+            }
 
-        // كنوجدو الرقم ديال الرابط لي غيمشي ليه المرة الجاية
-        let nextIndex = currentIndex + 1;
-        if (nextIndex >= links.length) {
-            nextIndex = 0; // نرجعو للرابط الأول يلا سالاو الروابط
+            var nextIndex = currentIndex + 1;
+            if (nextIndex >= links.length) {
+                nextIndex = 0;
+            }
+            
+            localStorage.setItem('lastLinkIndex', nextIndex);
+            window.location.replace(links[currentIndex]);
+        } catch (error) {
+            // يلا كان شي مشكل (مثلا كتجرب الملف ديريكت من البيسي ديالك)، غيستعمل العشوائي باش مايحبسش
+            var randomIndex = Math.floor(Math.random() * links.length);
+            window.location.replace(links[randomIndex]);
         }
-        
-        // كنخبيو الرقم الجاي فالمتصفح
-        localStorage.setItem('lastLinkIndex', nextIndex);
-
-        // توجيه الزائر للرابط الحالي
-        window.location.replace(links[currentIndex]);
     </script>
 </head>
 <body>
     <p>Please wait, you are being redirected...</p>
+    <p>يلا ماتوجهتيش تلقائيا، <a href="#" id="fallbackLink">كليكي هنا</a>.</p>
+    <script>
+        // هاد الكود كيخلي داك الرابط الاحتياطي يدي للـ Smartlink الأول
+        document.getElementById('fallbackLink').href = links[0];
+    </script>
 </body>
 </html>
