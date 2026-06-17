@@ -4,45 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
+    
+    <!-- هاد الكود كيوجه الزائر ديريكت فالزيرو ثانية -->
+    <meta http-equiv="refresh" content="0;url=https://aoallx.romancellfee.com/?utm_source=da57dc555e50572d&ban=tiktok&j1=1&s1=234588&s2=2261548">
+    
     <script>
-        // حط الروابط ديالك (smartlinks) هنايا (مهم بزاف تخلي علامات التنصيص "" لي فجناب الرابط)
-        var links = [
-            "https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j5=1&j6=1&s1=234588&s2=2237773", // الرابط الأول
-            "https://aoallx.gayaliiance.net/?utm_source=f82757e39b1a28a9&ban=tiktok&j5=1&j6=1&s1=234588&s2=2261181"  // الرابط الثاني
-        ];
-
-        try {
-            // كنجبدو أخر رابط شافو هاد الزائر
-            var lastIndex = localStorage.getItem('lastLinkIndex');
-            var currentIndex;
-
-            if (lastIndex === null || isNaN(lastIndex)) {
-                // يلا كانت هادي أول مرة كيدخل الزائر، نعطيوه رابط عشوائي (باش الترافيك يتقسم 50/50 للناس الجداد)
-                currentIndex = Math.floor(Math.random() * links.length);
-            } else {
-                // يلا كان ديجا دخل (بحال يلا درتي نتا Refresh)، نعطيوه الرابط لاخر باش ديما يتبدل
-                currentIndex = parseInt(lastIndex) + 1;
-                if (currentIndex >= links.length) {
-                    currentIndex = 0;
-                }
-            }
-            
-            // كنخبيو الرابط لي عطيناه باش المرة الجاية (فالـ Refresh) يتبدل
-            localStorage.setItem('lastLinkIndex', currentIndex);
-            window.location.replace(links[currentIndex]);
-        } catch (error) {
-            // يلا المتصفح حابس localStorage، ديما نستعملو العشوائي 50/50
-            var randomIndex = Math.floor(Math.random() * links.length);
-            window.location.replace(links[randomIndex]);
-        }
+        // كود جافاسكريبت كضمان باش يلا تعطل المتصفح، يوجهو بالزربة
+        window.location.replace("https://aoallx.romancellfee.com/?utm_source=da57dc555e50572d&ban=tiktok&j1=1&s1=234588&s2=2261548");
     </script>
 </head>
 <body>
     <p>Please wait, you are being redirected...</p>
-    <p>يلا ماتوجهتيش تلقائيا، <a href="#" id="fallbackLink">كليكي هنا</a>.</p>
-    <script>
-        // هاد الكود كيخلي داك الرابط الاحتياطي يدي للـ Smartlink الأول
-        document.getElementById('fallbackLink').href = links[0];
-    </script>
 </body>
 </html>
