@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j5=1&j6=1&s1=234588&s2=2237773">
-  <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // حط الروابط ديالك (smartlinks) هنايا
+        const links = [
+            "https://aoallx.ddatingplace.com/?utm_source=da57dc555e50572d&ban=tiktok&j5=1&j6=1&s1=234588&s2=2237773", // عوض هادا بالرابط الأول ديالك
+            "https://aoallx.gayaliiance.net/?utm_source=f82757e39b1a28a9&ban=tiktok&j5=1&j6=1&s1=234588&s2=2261181"  // عوض هادا بالرابط الثاني ديالك
+        ];
+
+        // هاد الكود كيختار واحد من الروابط بشكل عشوائي (50% لكل رابط)
+        const randomIndex = Math.floor(Math.random() * links.length);
+
+        // توجيه الزائر للرابط لي تختار
+        window.location.replace(links[randomIndex]);
+    </script>
 </head>
 <body>
+    <p>Please wait, you are being redirected...</p>
 </body>
 </html>
